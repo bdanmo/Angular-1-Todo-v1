@@ -12,15 +12,15 @@
         <div class="list" ng-controller="mainCtrl">
             <div class="item">
                 <input type="checkbox" ng-model="todo.completed"/>
-                <label class="editing-label">{{todo.name}}</label>
-                <input type="text" class="editing-label" ng-model="todo.name"/>
+                <label class="editing-label" ng-hide="editing">{{todo.name}}</label>
+                <input type="text" class="editing-label" ng-model="todo.name" ng-show="editing"/>
                 <div class="actions">
-                    <a href="">Edit</a>
+                    <a href="" ng-click="editing = !editing">Edit</a>
                     <a href="" ng-click="helloWorld()">Save</a>
                     <a href="" class="delete">Delete</a>
                 </div>
             </div>
-        </div>
+        </div> <!--end list/mainCtrl-->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
         <script src="vendor/underscore-min.js"></script>
         <script src="js/app.js"></script>
