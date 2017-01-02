@@ -1,13 +1,17 @@
 angular.module("toDoList", [])
-.controller('mainCtrl', function($scope) {
+.controller('mainCtrl', function($scope, dataService) {
+    $scope.helloConsole = dataService.helloConsole;
+    
     $scope.learningNgChange = function() {
         console.log("An input has changed!");
     }
 
-    $scope.todos = [
-        {"name": "Practice guitar"},
-        {"name": "Learn more JavaScript"},
-        {"name": "Get a better job"},
-        {"name": "Record a song"},
-    ]
+})
+
+.service('dataService', function() {
+
+    this.helloConsole = function() {
+        console.log("This is the data service function.");
+    }
+
 });
