@@ -10,10 +10,10 @@
     <body ng-app="toDoList">
         <h1>To-Do</h1>
         <div class="list" ng-controller="mainCtrl">
-            <div class="item" ng-class="{'editing': editing}" ng-repeat="todo in todos">
+            <div class="item" ng-class="{'editing': editing, 'edited': todo.edited}" ng-repeat="todo in todos">
                 <input type="checkbox" ng-model="todo.completed"/>
                 <label ng-click="editing = true" ng-hide="editing" class="editing-label" >{{todo.name}}</label>
-                <input type="text" ng-model="todo.name" ng-blur="editing = false" ng-show="editing" class="editing-label" />
+                <input type="text" ng-model="todo.name" ng-change="todo.edited = true" ng-blur="editing = false" ng-show="editing" class="editing-label" />
                 <div class="actions">
                     <a href="" ng-click="helloWorld()">Save</a>
                     <a href="" class="delete">Delete</a>
