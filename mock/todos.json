@@ -1,6 +1,6 @@
-{
+[
     {"name": "Practice guitar"},
     {"name": "Learn more JavaScript"},
     {"name": "Get a better job"},
     {"name": "Record a song"}
-}
+]

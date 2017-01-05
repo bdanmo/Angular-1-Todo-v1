@@ -6,12 +6,17 @@ angular.module("toDoList", [])
         console.log("An input has changed!");
     }
 
+    dataService.getTodos(function(response) {
+        $scope.todos = response.data;
+    });
+
 })
 
-.service('dataService', function() {
+.service('dataService', function($http) {
 
-    this.helloConsole = function() {
-        console.log("This is the data service function.");
+    this.getTodos = function(callback) {
+        $http.get('mock/todos.json')
+        .then(callback);
     }
 
 });
