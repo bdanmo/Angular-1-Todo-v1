@@ -1,5 +1,7 @@
 'use strict';
 
+angular.module("toDoList")
+
 .controller('mainCtrl', function($scope, dataService) {
     
     $scope.addTodo = function() {
@@ -14,10 +16,12 @@
     $scope.deleteTodo = function(todo, $index) {
         dataService.deleteTodo(todo);
         $scope.todos.splice($index, 1);
+        console.log('Deleted todo ' + todo.name + ' at index ' + $index);
     };
 
     $scope.saveTodo = function(todo) {
         dataService.saveTodo(todo);
     };
+
 })
 
