@@ -19,8 +19,8 @@ angular.module("toDoList")
         console.log('Deleted todo ' + todo.name + ' at index ' + $index);
     };
 
-    $scope.saveTodo = function(todo) {
-        dataService.saveTodo(todo);
+    $scope.saveTodos = function(todo) {
+        dataService.saveTodos(todo);
     };
 
 })
